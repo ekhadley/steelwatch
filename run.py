@@ -1,16 +1,16 @@
-import RPi.GPIO as GPIO
+import RPi.GPIO as gpio
 import time
 
-GPIO.setmode(GPIO.BCM)
+gpio.setmode(gpio.BCM)
 
 def blink(pin: int, count:int = 10):
-    GPIO.setup(pin, GPIO.OUT)
+    gpio.setup(pin, gpio.OUT)
     for _ in range(count):
-        GPIO.output(pin, GPIO.HIGH)
+        gpio.output(pin, gpio.HIGH)
         time.sleep(1)
-        GPIO.output(pin, GPIO.LOW)
+        gpio.output(pin, gpio.LOW)
         time.sleep(1)
 
 if __name__ == "__main__":
     blink(26)
-    GPIO.cleanup()
+    gpio.cleanup()
